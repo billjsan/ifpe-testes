@@ -1,4 +1,6 @@
-package model
+package model.repo
+
+import model.User
 
 object UserRepo {
     private var users: MutableList<User> = mutableListOf()
@@ -9,6 +11,10 @@ object UserRepo {
 
     fun deleteUser(user: User) {
         users.remove(user)
+    }
+
+    fun isDbEmpty(): Boolean {
+        return users.isEmpty();
     }
 
     fun updateUser(user: User) {
@@ -23,5 +29,13 @@ object UserRepo {
                 u.password = user.password
             }
         }
+    }
+
+    fun findUserByCPF(cpf: String): User? {
+        for (u: User in users) {
+            if (u.cpf.equals(cpf))
+                return u
+        }
+        return null
     }
 }

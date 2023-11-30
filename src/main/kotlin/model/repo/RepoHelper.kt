@@ -1,4 +1,4 @@
-package model
+package model.repo
 
 import java.util.*
 
