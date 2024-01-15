@@ -15,7 +15,7 @@ public class UsuarioTest {
     private final String TELEFONE = " (11)98765-4321";
     private final String SENHA = "Senha123";
     private final boolean MAIOR_DE_IDADE = true;
-    private DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+    private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
     private final LocalDate DATA_NASCIMENTO = LocalDate.parse(NASCIMENTO, formatter);
 
     @Test
@@ -40,6 +40,72 @@ public class UsuarioTest {
         assert user.getBirthDate().equals(DATA_NASCIMENTO);
         assert user.getPassword().equals(SENHA);
         assert user.isResponsible() == MAIOR_DE_IDADE;
+        userManager.deleteUser();
+        assert UserRepo.INSTANCE.isDbEmpty();
+    }
+
+    @Test
+    public void editarNome() {
+        UserManager userManager = new UserManager();
+        int resultCode = userManager.createNewUser(
+                NOME,
+                EMAIL,
+                CPF,
+                TELEFONE,
+                SENHA,
+                DATA_NASCIMENTO,
+                MAIOR_DE_IDADE
+        );
+        assert resultCode == UserManager.VALID_USER;
+        userManager.saveUser();
+        User user = userManager.getUser();
+        assert user.getName().equals(NOME);
+        assert user.getEmail().equals(EMAIL);
+        assert user.getCpf().equals(CPF);
+        assert user.getCellNumber().equals(TELEFONE);
+        assert user.getBirthDate().equals(DATA_NASCIMENTO);
+        assert user.getPassword().equals(SENHA);
+        assert user.isResponsible() == MAIOR_DE_IDADE;
+        String novoNome = "Novo nome";
+        userManager.updateName(novoNome);
+        userManager.updateUser();
+
+        User userByCPF = UserRepo.INSTANCE.findUserByCPF(CPF);
+        assert userByCPF.getName().equals(novoNome);
+
+        userManager.deleteUser();
+        assert UserRepo.INSTANCE.isDbEmpty();
+    }
+
+    @Test
+    public void editarTelefone() {
+        UserManager userManager = new UserManager();
+        int resultCode = userManager.createNewUser(
+                NOME,
+                EMAIL,
+                CPF,
+                TELEFONE,
+                SENHA,
+                DATA_NASCIMENTO,
+                MAIOR_DE_IDADE
+        );
+        assert resultCode == UserManager.VALID_USER;
+        userManager.saveUser();
+        User user = userManager.getUser();
+        assert user.getName().equals(NOME);
+        assert user.getEmail().equals(EMAIL);
+        assert user.getCpf().equals(CPF);
+        assert user.getCellNumber().equals(TELEFONE);
+        assert user.getBirthDate().equals(DATA_NASCIMENTO);
+        assert user.getPassword().equals(SENHA);
+        assert user.isResponsible() == MAIOR_DE_IDADE;
+        String novoTelefone = "(81) 9999-8888";
+        userManager.updateTelefone(novoTelefone);
+        userManager.updateUser();
+
+        User userByCPF = UserRepo.INSTANCE.findUserByCPF(CPF);
+        assert userByCPF.getCellNumber().equals(novoTelefone);
+
         userManager.deleteUser();
         assert UserRepo.INSTANCE.isDbEmpty();
     }

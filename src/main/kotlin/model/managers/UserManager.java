@@ -106,4 +106,16 @@ public class UserManager {
     public void deleteUser() {
         UserRepo.INSTANCE.deleteUser(user);
     }
+
+    public void updateName(String novoNome) {
+        user.setName(novoNome);
+    }
+
+    public void updateUser() {
+        UserRepo.INSTANCE.updateUser(user);
+    }
+
+    public void updateTelefone(String novoTelefone) {
+        user.setCellNumber(novoTelefone);
+    }
 }

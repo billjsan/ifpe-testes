@@ -5,14 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f3af5061-460b-4bd9-a6c2-4d21bbea061f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/model/managers/UserManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/model/managers/LoginManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/LoginTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/model/RepoHelper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/model/repo/RepoHelper.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/model/User.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/model/User.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/model/UserRepo.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/model/repo/UserRepo.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/UserTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/model/managers/UserManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/model/managers/UserManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/model/repo/UserRepo.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/model/repo/UserRepo.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/kotlin/UsuarioTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/UsuarioTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,7 +39,13 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "JUnit.LoginTest.executor": "Run",
+    "JUnit.LoginTest.realizarLoginComCampoDeEmailVazio.executor": "Run",
+    "JUnit.LoginTest.realizarLoginComCampoDeSenhaVazio.executor": "Run",
+    "JUnit.LoginTest.realizarLoginComCamposVazios.executor": "Run",
+    "JUnit.LoginTest.realizarLoginComSenhaIncorreta.executor": "Run",
     "JUnit.UserTest.registrarUsuarioComInfoCorretas.executor": "Run",
+    "JUnit.UsuarioTest.editarNome.executor": "Run",
     "JUnit.UsuarioTest.executor": "Run",
     "JUnit.UsuarioTest.registrarUsuarioComCPFJaUsadoEmOutroCadastro.executor": "Run",
     "JUnit.UsuarioTest.registrarUsuarioComInformacoesCorretas.executor": "Run",
@@ -71,12 +74,21 @@
       <recent name="model.repo" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.UsuarioTest">
-    <configuration name="UserTest.registrarUsuarioComInfoCorretas" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.LoginTest">
+    <configuration name="LoginTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Testes-RecBeer" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="UserTest" />
-      <option name="METHOD_NAME" value="registrarUsuarioComInfoCorretas" />
+      <option name="MAIN_CLASS_NAME" value="LoginTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LoginTest.realizarLoginComSenhaIncorreta" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Testes-RecBeer" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="LoginTest" />
+      <option name="METHOD_NAME" value="realizarLoginComSenhaIncorreta" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -91,31 +103,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UsuarioTest.registrarUsuarioComCPFJaUsadoEmOutroCadastro" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UsuarioTest.editarNome" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Testes-RecBeer" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="UsuarioTest" />
-      <option name="METHOD_NAME" value="registrarUsuarioComCPFJaUsadoEmOutroCadastro" />
+      <option name="METHOD_NAME" value="editarNome" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UsuarioTest.registrarUsuarioComNomeVazio" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UsuarioTest.editarTelefone" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Testes-RecBeer" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="UsuarioTest" />
-      <option name="METHOD_NAME" value="registrarUsuarioComNomeVazio" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UsuarioTest.registrarUsuarioComSenhaInvalida" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Testes-RecBeer" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="UsuarioTest" />
-      <option name="METHOD_NAME" value="registrarUsuarioComSenhaInvalida" />
+      <option name="METHOD_NAME" value="editarTelefone" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -123,11 +125,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.LoginTest" />
         <item itemvalue="JUnit.UsuarioTest" />
-        <item itemvalue="JUnit.UsuarioTest.registrarUsuarioComCPFJaUsadoEmOutroCadastro" />
-        <item itemvalue="JUnit.UsuarioTest.registrarUsuarioComNomeVazio" />
-        <item itemvalue="JUnit.UsuarioTest.registrarUsuarioComSenhaInvalida" />
-        <item itemvalue="JUnit.UserTest.registrarUsuarioComInfoCorretas" />
+        <item itemvalue="JUnit.UsuarioTest.editarTelefone" />
+        <item itemvalue="JUnit.UsuarioTest.editarNome" />
+        <item itemvalue="JUnit.LoginTest.realizarLoginComSenhaIncorreta" />
       </list>
     </recent_temporary>
   </component>
@@ -148,7 +150,8 @@
       <updated>1701299217648</updated>
       <workItem from="1701299218698" duration="4189000" />
       <workItem from="1701351219005" duration="56000" />
-      <workItem from="1704208450930" duration="4488000" />
+      <workItem from="1704208450930" duration="4814000" />
+      <workItem from="1705341595678" duration="5141000" />
     </task>
     <servers />
   </component>

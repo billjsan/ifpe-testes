@@ -38,4 +38,12 @@ object UserRepo {
         }
         return null
     }
+
+    fun findUserByEmail(email: String): User? {
+        for (u: User in users) {
+            if (u.email.equals(email))
+                return u
+        }
+        return null
+    }
 }
